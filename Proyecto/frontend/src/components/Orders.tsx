@@ -23,7 +23,7 @@ const Orders = ({results}: Props ) => {
         mutationFn: edit_order,
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["orders"] });
-            toast.success("Order delivered!");
+            toast.success("Reservacion Eliminada!");
         },
         onError: () => {
             toast.error("Error!");
@@ -57,22 +57,22 @@ const Orders = ({results}: Props ) => {
                             Order id
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Created at
+                            Reservado por
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Delivered at
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            User
+                            Usuario
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Total Price
+                           Precio Total
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Products
+                            Habitacion
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Shipping Address
+                            Direccion
                         </th>
 
                     </tr>

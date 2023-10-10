@@ -76,11 +76,7 @@ const CartPage = () => {
                         <div className="relative mt-5 overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
                             <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
                                 <div className="flex items-center flex-1 space-x-4">
-                                    <h5>
-                                        <span className="text-gray-300 text-xl font-bold">
-                                            Products in you cart: {cart.length}
-                                        </span>
-                                    </h5>
+                                    
                                     <h5>
                                         <span className="text-gray-300 text-xl font-bold">
                                             Total: {total_price === null && "0"}{" "}
@@ -97,31 +93,32 @@ const CartPage = () => {
                                                 scope="col"
                                                 className="px-4 py-3"
                                             >
-                                                Product
+                                                Habitacion
                                             </th>
                                             <th
                                                 scope="col"
                                                 className="px-4 py-3"
                                             >
-                                                Category
+                                                Categoria
                                             </th>
+                                            
                                             <th
                                                 scope="col"
                                                 className="px-4 py-3"
                                             >
-                                                Quantity
-                                            </th>
-                                            <th
-                                                scope="col"
-                                                className="px-4 py-3"
-                                            >
-                                                Price
+                                                Precio
                                             </th>
                                             <th
                                                 scope="col"
                                                 className="px-4 py-3"
                                             >
                                                 Total
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="px-4 py-3"
+                                            >
+                                                Eliminar
                                             </th>
                                         </tr>
                                     </thead>
@@ -149,6 +146,14 @@ const CartPage = () => {
                                                             {product.category}
                                                         </span>
                                                     </td>
+                                                    
+                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        ${product.price}
+                                                    </td>
+
+                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                        $ {product.quantity !== undefined ? product.price * product.quantity : 0}
+                                                    </td>
                                                     <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                         <div className="flex items-center space-x-3">
                                                             <button
@@ -165,68 +170,25 @@ const CartPage = () => {
                                                                     button
                                                                 </span>
                                                                 <svg
-                                                                    className="w-4 h-4"
-                                                                    aria-hidden="true"
-                                                                    fill="currentColor"
-                                                                    viewBox="0 0 20 20"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                >
-                                                                    <path
-                                                                        fill-rule="evenodd"
-                                                                        d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                                                        clip-rule="evenodd"
-                                                                    ></path>
-                                                                </svg>
+                                                        aria-hidden="true"
+                                                        className="w-5 h-5"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 20 20"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd"
+                                                        ></path>
+                                                    </svg>
                                                             </button>
-                                                            <div>
-                                                                {
-                                                                    product.quantity
-                                                                }
-                                                                <input
-                                                                    type="number"
-                                                                    id="first_product"
-                                                                    className="hidden bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                                    placeholder="1"
-                                                                    required
-                                                                />
-                                                            </div>
-                                                            <button
-                                                                onClick={() =>
-                                                                    addToCart(
-                                                                        product
-                                                                    )
-                                                                }
-                                                                className="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                                                                type="button"
-                                                            >
-                                                                <span className="sr-only">
-                                                                    Quantity
-                                                                    button
-                                                                </span>
-                                                                <svg
-                                                                    className="w-4 h-4"
-                                                                    aria-hidden="true"
-                                                                    fill="currentColor"
-                                                                    viewBox="0 0 20 20"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                >
-                                                                    <path
-                                                                        fill-rule="evenodd"
-                                                                        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                                                                        clip-rule="evenodd"
-                                                                    ></path>
-                                                                </svg>
-                                                            </button>
+                                                            
+                                                            
                                                         </div>
                                                     </td>
-                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        ${product.price}
-                                                    </td>
-
-                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                        $ {product.quantity !== undefined ? product.price * product.quantity : 0}
-                                                    </td>
                                                 </tr>
+                                                
                                             </>
                                         ))}
                                     </tbody>
@@ -237,32 +199,32 @@ const CartPage = () => {
 
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Shipping address
+                Reserva
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
 
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre del Huesped:</label>
                 <input 
                 onChange={(e) => setAddress(e.target.value)}
                 value={address}
-                type="text" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address"/>
+                type="text" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nombre del Huesped"/>
               </div>
 
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero de Personas:</label>
                 <input 
                 onChange={(e) => setCity(e.target.value)}
                 value={city}
-                type="text" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address"/>
+                type="text" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Numero de Personas"/>
               </div>
 
               <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Postal code</label>
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha de Registro:</label>
                 <input 
                 onChange={(e) => setPostal_code(e.target.value)}
                 value={postal_code}
-                type="text" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address"/>
+                type="text" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Fecha"/>
               </div>
 
             <div className="ml-[180px]">

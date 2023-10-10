@@ -93,7 +93,7 @@ const AddProductPage = () => {
         setIsHovered(false);
     };
 
-    if (addProdMutation.isLoading) return <p>Loader....</p>
+    if (addProdMutation.isLoading) return <p>Cargando....</p>
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 ">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[700px] w-[600px] rounded-md">
@@ -101,7 +101,7 @@ const AddProductPage = () => {
                     <div className="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
                         <div className="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                                Add Product
+                               Agregar Habitación
                             </h3>
                             <Link
                                 to="/admin"
@@ -131,7 +131,7 @@ const AddProductPage = () => {
                                         htmlFor="name"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
-                                        Name
+                                       Nombre
                                     </label>
                                     <input
                                         value={name}
@@ -140,7 +140,7 @@ const AddProductPage = () => {
                                         name="name"
                                         id="name"
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Type product name"
+                                        placeholder="Nombre"
                                     />
                                 </div>
 
@@ -167,7 +167,7 @@ const AddProductPage = () => {
                                         htmlFor="price"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
-                                        Price
+                                        Precio
                                     </label>
                                     <input
                                         value={price}
@@ -185,7 +185,7 @@ const AddProductPage = () => {
                                         htmlFor="category"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
-                                        Category
+                                        Categoria
                                     </label>
                                     <input
                                         value={category}
@@ -194,7 +194,7 @@ const AddProductPage = () => {
                                         name="category"
                                         id="category"
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Category"
+                                        placeholder="Categoria"
                                     />
                                 </div>
 
@@ -203,14 +203,14 @@ const AddProductPage = () => {
                                         htmlFor="description"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
-                                        Description
+                                        Descripción
                                     </label>
                                     <input
                                         value={description}
                                         onChange={handleDescriptionChange}
                                         id="description"
                                         className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Write product description here"
+                                        placeholder="Escribe la descripcion aqui"
                                     ></input>
                                 </div>
 
@@ -245,9 +245,9 @@ const AddProductPage = () => {
                                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
                                                     <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
                                                         <span className="font-semibold">
-                                                            Click to upload
+                                                            Click para subir
                                                         </span>{" "}
-                                                        or drag and drop
+                                                        o soltar imagen
                                                     </p>
                                                     <p className="text-xs text-gray-500 dark:text-gray-400">
                                                         SVG, PNG, JPG or GIF

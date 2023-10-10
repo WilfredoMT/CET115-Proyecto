@@ -90,7 +90,7 @@ const Header = () => {
                           to={'/cate'}
                           className='text-black p-2 px-4 rounded-lg hover:bg-slate-400 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                         >
-                          Categories
+                          Categorias
                         </Link>
                       </>
 
@@ -100,14 +100,14 @@ const Header = () => {
                             to={'/login'}
                             className='bg-slate-400 p-2 px-4 rounded-lg text-black dark:bg-gray-900 dark:text-white' 
                           >
-                            Log in
+                            Iniciar Sesion
                           </Link>
 
                           <Link
                             to={'/register'}
                             className='text-black p-2 px-4 rounded-lg hover:bg-slate-400 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                           >
-                            Sign up
+                            Registrarse 
                           </Link>
                         </>
                       )}
@@ -117,7 +117,7 @@ const Header = () => {
                         to={'/admin'}
                         className='text-black p-2 px-4 rounded-lg hover:bg-slate-400 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                       >
-                        Admin Panel
+                        Panel de Admin.
                       </Link>
                     )}
 
@@ -190,7 +190,7 @@ const Header = () => {
                               to="/profile"
                               className={classNames(active ? 'bg-gray-100 dark:bg-slate-700' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-slate-200')}
                             >
-                              Your Profile
+                              Perfil
                             </Link>
                           )}
                         </Menu.Item>
@@ -200,7 +200,7 @@ const Header = () => {
                               onClick={logOutFun}
                               className={classNames(active ? 'bg-gray-100 dark:bg-slate-700' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer dark:text-slate-200')}
                             >
-                              Sign out
+                              Cerrar Sesion
                             </span>
                           )}
                         </Menu.Item>
@@ -243,7 +243,7 @@ const Header = () => {
                     to={'/cate'}
                     className='text-black p-2 px-4 rounded-lg hover:bg-slate-400 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                   >
-                    Categories
+                    Categorias
                   </Link>
                 </div>
 
@@ -253,14 +253,14 @@ const Header = () => {
                       to={'/login'}
                       className='bg-slate-400 p-2 px-4 rounded-lg text-black dark:bg-gray-900 dark:text-white' 
                     >
-                      Log in
+                      Iniciar Sesion
                     </Link>
 
                     <Link
                       to={'/register'}
                       className='text-black p-2 px-4 rounded-lg hover:bg-slate-400 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                     >
-Sign up
+Registrarse
                     </Link>
 </div>
                 )}
@@ -271,7 +271,7 @@ Sign up
                     to={'/'}
                     className='text-black p-2 px-4 rounded-lg hover:bg-slate-400 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                   >
-                    Admin Panel
+                    Panel de Admin.
                   </Link>
                 </div>
               )}
